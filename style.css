@@ -145,6 +145,10 @@ body {
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+[data-theme="dark"] .logo img {
+    filter: invert(1) brightness(2);
+}
+
 .logo img:hover {
     transform: scale(1.05) translate3d(0, 0, 0);
 }
