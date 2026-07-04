@@ -330,12 +330,10 @@ main {
 }
 
 .item-icon {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--text-primary);
     opacity: 0.8;
+    margin-bottom: auto;
 }
 
 .bento-item h4 {
