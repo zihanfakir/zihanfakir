@@ -411,17 +411,27 @@ main {
     border-top: 1px solid var(--glass-border);
 }
 
-/* High FPS Animations */
+/* God Level Smooth Load Animations */
 .fade-in {
     opacity: 0;
-    transform: translate3d(0, 40px, 0);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.fade-in.visible {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
+
+.hero { animation-delay: 0.1s; }
+#about { animation-delay: 0.2s; }
+#skills { animation-delay: 0.3s; }
+#contact { animation-delay: 0.4s; }
 
 /* Custom Scrollbar for God-Level Polish */
 ::-webkit-scrollbar {

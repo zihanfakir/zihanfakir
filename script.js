@@ -38,24 +38,7 @@ function updateLogo(theme) {
     }
 }
 
-// Smooth Intersection Observer for Scroll Animations
-const fadeElements = document.querySelectorAll('.fade-in');
-
-const fadeObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Stop observing once animated in for a clean one-time effect
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    root: null,
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-});
-
-fadeElements.forEach(el => fadeObserver.observe(el));
+// Animations are now fully CSS-based for maximum performance on mobile.
 
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
