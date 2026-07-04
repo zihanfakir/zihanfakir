@@ -464,6 +464,22 @@ main {
 }
 
 @media (max-width: 768px) {
+    /* Performance optimizations for lower-end mobile devices */
+    .glow {
+        filter: blur(40px); /* Reduce expensive blur calculation */
+        animation: none; /* Disable infinite background animation on mobile to save GPU */
+    }
+    
+    .glass {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .apple-nav {
+        backdrop-filter: blur(15px) saturate(150%);
+        -webkit-backdrop-filter: blur(15px) saturate(150%);
+    }
+
     .nav-links {
         position: absolute;
         top: 120%;
