@@ -437,6 +437,18 @@ main {
     }
 }
 
+/* Safe Scroll Animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .hero { animation-delay: 0.1s; }
 #about { animation-delay: 0.2s; }
 #skills { animation-delay: 0.3s; }
@@ -569,5 +581,43 @@ main {
     
     main {
         padding: 100px 15px 40px; /* Reduce padding for small screens */
+    }
+}
+
+/* Custom Cursor for PC */
+@media (pointer: fine) {
+    body, a, button, .icon-btn, .social-link {
+        cursor: none !important;
+    }
+    
+    .custom-cursor, .custom-cursor-follower {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease;
+    }
+    
+    .custom-cursor {
+        width: 8px;
+        height: 8px;
+        background-color: var(--text-primary);
+    }
+    
+    .custom-cursor-follower {
+        width: 32px;
+        height: 32px;
+        border: 2px solid var(--text-primary);
+        opacity: 0.5;
+        transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
+    }
+    
+    .custom-cursor-follower.hover {
+        width: 48px;
+        height: 48px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: transparent;
+        opacity: 1;
     }
 }

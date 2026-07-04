@@ -105,3 +105,55 @@ window.addEventListener('resize', () => {
         }
     }
 });
+
+// Safe Scroll Animations (Reveals elements as you scroll)
+const revealElements = document.querySelectorAll('.scroll-reveal');
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    root: null,
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+});
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Premium Custom Cursor for PC
+if (window.matchMedia("(pointer: fine)").matches) {
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    const follower = document.createElement('div');
+    follower.className = 'custom-cursor-follower';
+    document.body.appendChild(cursor);
+    document.body.appendChild(follower);
+    
+    let mouseX = 0, mouseY = 0;
+    let followerX = 0, followerY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+    
+    function animateFollower() {
+        followerX += (mouseX - followerX) * 0.2;
+        followerY += (mouseY - followerY) * 0.2;
+        follower.style.left = followerX + 'px';
+        follower.style.top = followerY + 'px';
+        requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+    
+    // Add hover effect to all interactive elements
+    const interactables = document.querySelectorAll('a, button, .bento-item, .icon-btn, .social-link');
+    interactables.forEach(el => {
+        el.addEventListener('mouseenter', () => follower.classList.add('hover'));
+        el.addEventListener('mouseleave', () => follower.classList.remove('hover'));
+    });
+}
