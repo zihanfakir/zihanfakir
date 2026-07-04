@@ -9,7 +9,6 @@ const savedTheme = localStorage.getItem('apple-portfolio-theme');
 if (savedTheme) {
     htmlElement.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
-    updateLogo(savedTheme);
 }
 
 themeToggle.addEventListener('click', () => {
@@ -19,7 +18,6 @@ themeToggle.addEventListener('click', () => {
     htmlElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('apple-portfolio-theme', newTheme);
     updateThemeIcon(newTheme);
-    updateLogo(newTheme);
 });
 
 function updateThemeIcon(theme) {
@@ -27,14 +25,6 @@ function updateThemeIcon(theme) {
         themeIcon.className = 'fas fa-sun';
     } else {
         themeIcon.className = 'fas fa-moon';
-    }
-}
-
-function updateLogo(theme) {
-    if (theme === 'dark') {
-        mainLogo.src = 'assets/1.png';
-    } else {
-        mainLogo.src = 'assets/2.png';
     }
 }
 
