@@ -47,9 +47,6 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -webkit-tap-highlight-color: transparent;
-    
-    /* Only transition colors globally to avoid layout thrashing */
-    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 body {
@@ -125,7 +122,6 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.05);
     border-radius: 100px;
     z-index: 1000;
-    will-change: transform;
 }
 
 .nav-content {
@@ -142,7 +138,6 @@ body {
     height: 32px;
     border-radius: 50%;
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform;
 }
 
 .logo img:hover {
@@ -186,7 +181,6 @@ body {
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform, opacity;
 }
 
 .icon-btn:hover {
@@ -275,7 +269,6 @@ main {
     font-weight: 500;
     text-decoration: none;
     transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
-    will-change: transform, opacity;
 }
 
 .btn:active {
@@ -321,7 +314,6 @@ main {
     position: relative;
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
-    will-change: transform;
 }
 
 .bento-item:hover {
@@ -373,7 +365,6 @@ main {
     font-size: 1.1rem;
     font-weight: 500;
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform;
 }
 
 .skill-pill:hover {
@@ -403,7 +394,6 @@ main {
     color: var(--text-primary);
     text-decoration: none;
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s ease;
-    will-change: transform;
 }
 
 .social-link:hover {
@@ -426,7 +416,6 @@ main {
     opacity: 0;
     transform: translate3d(0, 40px, 0);
     transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
 }
 
 .fade-in.visible {
