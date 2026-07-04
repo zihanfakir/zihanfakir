@@ -449,7 +449,7 @@ main {
     transform: translateY(0);
 }
 
-.hero { transition-delay: 0.1s; }
+.hero { animation-delay: 0.1s; }
 #about { transition-delay: 0.2s; }
 #skills { transition-delay: 0.3s; }
 #contact { transition-delay: 0.4s; }
