@@ -449,10 +449,10 @@ main {
     transform: translateY(0);
 }
 
-.hero { animation-delay: 0.1s; }
-#about { animation-delay: 0.2s; }
-#skills { animation-delay: 0.3s; }
-#contact { animation-delay: 0.4s; }
+.hero { transition-delay: 0.1s; }
+#about { transition-delay: 0.2s; }
+#skills { transition-delay: 0.3s; }
+#contact { transition-delay: 0.4s; }
 
 /* Custom Scrollbar for God-Level Polish */
 ::-webkit-scrollbar {

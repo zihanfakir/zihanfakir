@@ -2,7 +2,6 @@
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 const themeIcon = themeToggle.querySelector('i');
-const mainLogo = document.getElementById('main-logo');
 
 // Check local storage for theme
 const savedTheme = localStorage.getItem('apple-portfolio-theme');
