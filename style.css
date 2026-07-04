@@ -597,18 +597,19 @@ main {
         border-radius: 50%;
         transform: translate(-50%, -50%);
         transition: transform 0.1s ease;
+        mix-blend-mode: difference;
     }
     
     .custom-cursor {
         width: 8px;
         height: 8px;
-        background-color: var(--text-primary);
+        background-color: #fff;
     }
     
     .custom-cursor-follower {
         width: 32px;
         height: 32px;
-        border: 2px solid var(--text-primary);
+        border: 2px solid #fff;
         opacity: 0.5;
         transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
     }
@@ -616,8 +617,8 @@ main {
     .custom-cursor-follower.hover {
         width: 48px;
         height: 48px;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: #fff;
         border-color: transparent;
-        opacity: 1;
+        opacity: 0.2;
     }
 }
