@@ -55,13 +55,27 @@ mobileMenuBtn.addEventListener('click', () => {
     }
 });
 
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        const icon = mobileMenuBtn.querySelector('i');
-        if(icon) {
-            icon.className = 'fas fa-bars';
+// Smooth scrolling without adding # to URL
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Close mobile menu if clicked from there
+        if (this.closest('.nav-links')) {
+            navLinks.classList.remove('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if(icon) {
+                icon.className = 'fas fa-bars';
+            }
         }
     });
 });
