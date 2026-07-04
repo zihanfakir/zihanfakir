@@ -159,7 +159,7 @@ if (window.matchMedia("(pointer: fine)").matches) {
 }
 
 // Automatically update footer year
-const yearElement = document.getElementById('current-year');
+const yearElement = document.getElementById('year');
 if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 }
