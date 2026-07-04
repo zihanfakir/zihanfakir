@@ -157,3 +157,9 @@ if (window.matchMedia("(pointer: fine)").matches) {
         el.addEventListener('mouseleave', () => follower.classList.remove('hover'));
     });
 }
+
+// Automatically update footer year
+const yearElement = document.getElementById('current-year');
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
