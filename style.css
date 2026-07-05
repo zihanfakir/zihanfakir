@@ -643,8 +643,8 @@ main {
     }
 
     .glass {
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
     
     /* 3. Disable hover-state transitions to prevent accidental repaints on touch scroll */
