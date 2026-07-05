@@ -627,3 +627,32 @@ main {
         opacity: 0.2;
     }
 }
+
+/* 🚀 God-Level Mobile Performance Optimizations */
+@media (max-width: 768px) {
+    /* 1. Disable ambient background animation */
+    /* Mobile GPUs struggle with large animated blurred elements. Disabling animation saves massive battery & boosts FPS. */
+    .glow {
+        animation: none !important; 
+        filter: blur(80px) !important; /* Lower blur radius is significantly faster to render */
+        will-change: auto !important; /* Free up VRAM */
+    }
+    
+    /* 2. Reduce heavy backdrop-filters */
+    /* High blur radiuses in backdrop-filter cause extreme lag on scrolling for budget phones */
+    .apple-nav {
+        backdrop-filter: blur(15px) saturate(120%) !important;
+        -webkit-backdrop-filter: blur(15px) saturate(120%) !important;
+    }
+
+    .glass {
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+    }
+    
+    /* 3. Disable hover-state transitions to prevent accidental repaints on touch scroll */
+    .bento-item, .skill-pill, .social-link {
+        transition: transform 0.2s ease, opacity 0.2s ease !important;
+        box-shadow: none !important;
+    }
+}
