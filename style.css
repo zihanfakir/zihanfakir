@@ -638,11 +638,13 @@ main {
         will-change: auto !important; /* Free up VRAM */
     }
     
-    /* 2. Reduce heavy backdrop-filters */
-    /* High blur radiuses in backdrop-filter cause extreme lag on scrolling for budget phones */
+    /* 2. Remove blur and make navigation bar transparent on mobile */
     .apple-nav {
-        backdrop-filter: blur(15px) saturate(120%) !important;
-        -webkit-backdrop-filter: blur(15px) saturate(120%) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
     }
 
     .glass {
