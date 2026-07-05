@@ -426,6 +426,29 @@ main {
     border-top: 1px solid var(--glass-border);
 }
 
+/* Language Switcher Button */
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+.lang-btn:hover {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    transform: scale(1.05);
+}
+
 /* God Level Smooth Load Animations */
 .fade-in {
     opacity: 0;
