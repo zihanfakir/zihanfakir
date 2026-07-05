@@ -652,4 +652,12 @@ main {
         transition: transform 0.2s ease, opacity 0.2s ease !important;
         box-shadow: none !important;
     }
+
+    /* 4. ULTRA LOAD SPEED: Disable all fade-in animations on mobile so content appears instantly */
+    .fade-in, .scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
 }
