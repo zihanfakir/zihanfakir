@@ -228,6 +228,7 @@ main {
 /* Hero Section */
 .hero {
     min-height: 80vh;
+    min-height: 80svh; /* Safari dynamic viewport support */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -499,9 +500,7 @@ main {
         --glass-bg: rgba(255, 255, 255, 0.85);
     }
 
-    .glow {
-        display: none; /* Completely remove background glows on mobile */
-    }
+    /* Glow is now optimized at the bottom of the file instead of hidden completely */
     
     .glass {
         backdrop-filter: none !important;
