@@ -629,12 +629,9 @@ main {
 
 /* 🚀 God-Level Mobile Performance Optimizations */
 @media (max-width: 768px) {
-    /* 1. Disable ambient background animation */
-    /* Mobile GPUs struggle with large animated blurred elements. Disabling animation saves massive battery & boosts FPS. */
-    .glow {
-        animation: none !important; 
-        filter: blur(80px) !important; /* Lower blur radius is significantly faster to render */
-        will-change: auto !important; /* Free up VRAM */
+    /* 1. Disable ambient background completely for a solid color background on mobile */
+    .ambient-background, .glow {
+        display: none !important;
     }
     
     /* 2. Remove blur but keep translucent background so text is readable */
